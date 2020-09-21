@@ -26,8 +26,8 @@
                                             <select name="teacher_id" class="chzn-select" required>
                                               	<option></option>
 											<?php
-											$query = mysql_query("select * from teacher order by firstname");
-											while($row = mysql_fetch_array($query)){
+											$query = mysqli_query($GLOBALS["___mysqli_ston"], "select * from teacher order by firstname");
+											while($row = mysqli_fetch_array($query)){
 											
 											?>
 											
