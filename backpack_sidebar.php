@@ -12,8 +12,8 @@
 				</a>
 			</li>
 			<?php
-			$message_query = mysql_query("select * from message where reciever_id = '$session_id' and message_status != 'read' ")or die(mysql_error());
-			$count_message = mysql_num_rows($message_query);
+			$message_query = mysqli_query($GLOBALS["___mysqli_ston"], "select * from message where reciever_id = '$session_id' and message_status != 'read' ")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+			$count_message = mysqli_num_rows($message_query);
 			?>
 			<li class="">
 			<a href="student_message.php"><i class="icon-chevron-right"></i><i class="icon-envelope-alt"></i>&nbsp;Message
