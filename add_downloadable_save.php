@@ -7,8 +7,8 @@ $errmsg_arr = array();
 //Validation error flag
 $errflag = false;
 
-$uploaded_by_query = mysql_query("select * from teacher where teacher_id = '$session_id'")or die(mysql_error());
-$uploaded_by_query_row = mysql_fetch_array($uploaded_by_query);
+$uploaded_by_query = mysqli_query($GLOBALS["___mysqli_ston"], "select * from teacher where teacher_id = '$session_id'")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+$uploaded_by_query_row = mysqli_fetch_array($uploaded_by_query);
 $uploaded_by = $uploaded_by_query_row['firstname']."".$uploaded_by_query_row['lastname'];
 
 /* $id_class=$_POST['id_class']; */
@@ -24,7 +24,7 @@ function clean($str) {
     if (get_magic_quotes_gpc()) {
         $str = stripslashes($str);
     }
-    return mysql_real_escape_string($str);
+    return mysqli_real_escape_string($GLOBALS["___mysqli_ston"], $str);
 }
 
 //Sanitize the POST values
@@ -81,8 +81,8 @@ if ((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 
 											{			
 										
                /*  $qry2 = "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id[$i]','$name','$uploaded_by')"; */
-				mysql_query("INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id[$i]','$name','$uploaded_by')");
-				mysql_query("insert into notification (teacher_class_id,notification,date_of_notification,link) value('$id[$i]','$name_notification',NOW(),'downloadable_student.php')")or die(mysql_error());
+				mysqli_query($GLOBALS["___mysqli_ston"], "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id[$i]','$name','$uploaded_by')");
+				mysqli_query($GLOBALS["___mysqli_ston"], "insert into notification (teacher_class_id,notification,date_of_notification,link) value('$id[$i]','$name_notification',NOW(),'downloadable_student.php')")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
 			   
 			  }
 			   
