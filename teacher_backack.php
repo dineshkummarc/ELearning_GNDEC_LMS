@@ -10,8 +10,8 @@
 					    <!-- breadcrumb -->	
 									<ul class="breadcrumb">
 										<?php
-										$school_year_query = mysql_query("select * from school_year order by school_year DESC")or die(mysql_error());
-										$school_year_query_row = mysql_fetch_array($school_year_query);
+										$school_year_query = mysqli_query($GLOBALS["___mysqli_ston"], "select * from school_year order by school_year DESC")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+										$school_year_query_row = mysqli_fetch_array($school_year_query);
 										$school_year = $school_year_query_row['school_year'];
 										?>
 											<li><a href="#"><b>My Class</b></a><span class="divider">/</span></li>
@@ -27,8 +27,8 @@
                             <div class="block-content collapse in">
                                 <div class="span12">
 								<?php
-								$query_backpack = mysql_query("select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC ")or die(mysql_error());
-								$num_row = mysql_num_rows($query_backpack);
+								$query_backpack = mysqli_query($GLOBALS["___mysqli_ston"], "select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC ")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$num_row = mysqli_num_rows($query_backpack);
 								if ($num_row > 0){
 								?>
 									<div class="pull-right">
@@ -54,8 +54,8 @@
 										</thead>
 										<tbody>
                               		<?php
-										$query = mysql_query("select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC")or die(mysql_error());
-										while($row = mysql_fetch_array($query)){
+										$query = mysqli_query($GLOBALS["___mysqli_ston"], "select * FROM teacher_backpack where teacher_id = '$session_id'  order by fdatein DESC")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+										while($row = mysqli_fetch_array($query)){
 										$id  = $row['file_id'];
 									?>                              
 										<tr id="del<?php echo $id; ?>">
