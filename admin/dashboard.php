@@ -20,8 +20,8 @@
 							        <div class="span12">
 						
 									<?php 
-								$query_reg_teacher = mysql_query("select * from teacher where teacher_status = 'Registered' ")or die(mysql_error());
-								$count_reg_teacher = mysql_num_rows($query_reg_teacher);
+								$query_reg_teacher = mysqli_query($GLOBALS["___mysqli_ston"], "select * from teacher where teacher_status = 'Registered' ")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_reg_teacher = mysqli_num_rows($query_reg_teacher);
 								?>
 								
                                 <div class="span3">
@@ -32,8 +32,8 @@
                                 </div>
 								
 								<?php 
-								$query_teacher = mysql_query("select * from teacher")or die(mysql_error());
-								$count_teacher = mysql_num_rows($query_teacher);
+								$query_teacher = mysqli_query($GLOBALS["___mysqli_ston"], "select * from teacher")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_teacher = mysqli_num_rows($query_teacher);
 								?>
 								
 								
@@ -45,8 +45,8 @@
                                 </div>
 								
 								<?php 
-								$query_student = mysql_query("select * from student where status='Registered'")or die(mysql_error());
-								$count_student = mysql_num_rows($query_student);
+								$query_student = mysqli_query($GLOBALS["___mysqli_ston"], "select * from student where status='Registered'")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_student = mysqli_num_rows($query_student);
 								?>
 								
                                 <div class="span3">
@@ -58,8 +58,8 @@
 								
 								
 										<?php 
-								$query_student = mysql_query("select * from student")or die(mysql_error());
-								$count_student = mysql_num_rows($query_student);
+								$query_student = mysqli_query($GLOBALS["___mysqli_ston"], "select * from student")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_student = mysqli_num_rows($query_student);
 								?>
 								
                                 <div class="span3">
@@ -75,8 +75,8 @@
 							
 								
 									<?php 
-								$query_class = mysql_query("select * from class")or die(mysql_error());
-								$count_class = mysql_num_rows($query_class);
+								$query_class = mysqli_query($GLOBALS["___mysqli_ston"], "select * from class")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_class = mysqli_num_rows($query_class);
 								?>
 								
                                 <div class="span3">
@@ -88,8 +88,8 @@
 								
 								
 										<?php 
-								$query_file = mysql_query("select * from files")or die(mysql_error());
-								$count_file = mysql_num_rows($query_file);
+								$query_file = mysqli_query($GLOBALS["___mysqli_ston"], "select * from files")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_file = mysqli_num_rows($query_file);
 								?>
 								
                                 <div class="span3">
@@ -101,8 +101,8 @@
 								
 								
 										<?php 
-								$query_subject = mysql_query("select * from subject")or die(mysql_error());
-								$count_subject = mysql_num_rows($query_subject);
+								$query_subject = mysqli_query($GLOBALS["___mysqli_ston"], "select * from subject")or die(mysqli_error($GLOBALS["___mysqli_ston"]));
+								$count_subject = mysqli_num_rows($query_subject);
 								?>
 								
                                 <div class="span3">
